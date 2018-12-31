@@ -1,0 +1,58 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    aaptOptions.cruncherEnabled = false
+    aaptOptions.useNewCruncher = false
+    defaultConfig {
+        applicationId "com.example.v_zhaihongyuan.gankio"
+        minSdkVersion 15
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'com.android.support:design:23.3.0'
+    implementation 'com.android.support:support-v4:23.3.0'
+    implementation 'com.jude:easyrecyclerview:3.5.7'
+    testImplementation 'junit:junit:4.12'
+    //    进行图片缓存
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    //Rx
+    implementation 'io.reactivex:rxjava:1.1.5'
+    implementation 'io.reactivex:rxandroid:1.2.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava:2.0.2'
+    implementation 'com.squareup.retrofit2:retrofit:2.0.2'
+    implementation 'com.squareup.retrofit2:converter-gson:2.0.2'
+    implementation 'de.hdodenhof:circleimageview:2.0.0'
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+    //    implementation 'com.github.chrisbanes:PhotoView:1.2.6'
+    implementation 'com.github.chrisbanes.photoview:library:1.2.4'
+    //PushSDK必须依赖基础组件库，所以需要加入对应依赖
+    implementation 'com.umeng.umsdk:common:1.5.4'
+//PushSDK必须依赖utdid库，所以需要加入对应依赖
+    implementation 'com.umeng.umsdk:utdid:1.1.5.3'
+//PushSDK
+    implementation 'com.umeng.umsdk:push:5.0.2'
+
+    // 写一个布局使用CardView
+    implementation 'com.android.support:cardview-v7:23.3.0'
+
+    //依赖一个视频播放器
+
+    implementation 'com.wang.avi:library:1.0.5'
+
+
+}
